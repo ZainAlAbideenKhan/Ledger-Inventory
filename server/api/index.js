@@ -6,12 +6,12 @@ const inventoryRoutes = require("./routes/ledger.routes");
 const ledgerRoutes = require("./routes/inventory.routes");
 const initSchema = require("./db/initSchema");
 
+const app = express();
 
 app.get('/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-const app = express();
 
 app.use(cors());
 app.use(express.json());
