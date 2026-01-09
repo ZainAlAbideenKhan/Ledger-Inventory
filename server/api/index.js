@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 
 const authRoutes = require("./routes/auth.routes");
-const inventoryRoutes = require("./routes/ledger.routes");
-const ledgerRoutes = require("./routes/inventory.routes");
+const inventoryRoutes = require("./routes/inventory.routes");
+const ledgerRoutes = require("./routes/ledger.routes");
 const initSchema = require("./db/initSchema");
 
 const app = express();
