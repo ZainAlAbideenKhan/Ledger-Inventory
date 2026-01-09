@@ -1,0 +1,132 @@
+/* =========================
+   AUTH PAGE BASE
+========================= */
+
+.auth-container {
+  font-family: "Ubuntu", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f6f8;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-card button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.login-card button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+/* =========================
+   ERROR & SIGNUP TEXT
+========================= */
+
+.error-text {
+  color: #dc2626;
+  font-size: 13px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.signup-text {
+  margin-top: 16px;
+  font-size: 13px;
+  text-align: center;
+  color: #4b5563;
+}
+
+.signup-link {
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (min-width: 768px) {
+  .login-card {
+    padding: 36px 32px;
+  }
+
+  .login-card h2 {
+    font-size: 24px;
+  }
+}

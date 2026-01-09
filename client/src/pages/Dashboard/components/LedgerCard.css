@@ -1,0 +1,76 @@
+.ledger-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.ledger-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ledger-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ledger-name {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.ledger-role {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.ledger-role.admin {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.ledger-role.writer {
+  background: #ecfeff;
+  color: #0f766e;
+}
+
+.ledger-role.reader {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.ledger-subnote {
+  margin: 10px 0;
+  font-size: 13px;
+  color: #6b7280;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.ledger-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #4b5563;
+  margin-top: 12px;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+.meta-label {
+  display: block;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.ledger-grid p {
+  font-family: "Ubuntu", sans-serif;
+}

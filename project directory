@@ -1,0 +1,46 @@
+client/
+|
++-src/
+| |
+| +-assets/ # will contains images/resources used in the pages
+| +-components/ # general components common to all pages
+| +-pages/ # contins pages of the app
+| | |
+| | +-Admin
+| | | |
+| | | +-<Page Name>/
+| | |   |
+| | |   +-<Page Name>.jsx
+| | |   +-<Page Name>.css
+| | |   +-components/ # will contains components specific to the page
+| | +-Writer
+| | | |
+| | | +-<Page Name>/
+| | |   |
+| | |   +-<Page Name>.jsx
+| | |   +-<Page Name>.css
+| | |   +-components/ # will contains components specific to the page
+| | +-Reader
+| | | |
+| | | +-<Page Name>/
+| | |   |
+| | |   +-<Page Name>.jsx
+| | |   +-<Page Name>.css
+| | |   +-components/ # will contains components specific to the page
+| | +-Auth/ # Login Page login will recide here
+| +-services # contains API service logic
+| +-index.js
+| +-app.js
++-.env # contains 'REACT_APP_API_BASE_URL' etc.
+
+server/
+|
++-server.js # main file that executes
++-src/
+| |
+| +-controllers/
+| +-db/
+| +-middleware/ # auth, rolecheck, etc. logic
+| +-routes/
+| +-app.js # binds everything in it
++-.env # database and server credentials

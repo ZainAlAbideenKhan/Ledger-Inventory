@@ -1,0 +1,58 @@
+.inventory-wrapper {
+  min-height: 100vh;
+  background: #f4f6f8;
+  display: flex;
+  flex-direction: column;
+}
+
+/* body layout */
+.inventory-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* main content */
+.inventory-main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #f9fafb;
+}
+
+/* smooth scrolling */
+.inventory-main::-webkit-scrollbar {
+  width: 8px;
+}
+.inventory-main::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.button {
+  margin: 12px 5px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.button.delete-btn {
+  background: #ff1919;
+}
+
+@media (max-width: 900px) {
+  .members-sidebar {
+    display: none;
+  }
+
+  .inventory-main {
+    padding: 14px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}

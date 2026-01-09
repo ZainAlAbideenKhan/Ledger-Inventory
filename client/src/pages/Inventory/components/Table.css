@@ -1,0 +1,59 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+thead {
+  background: #f3f4f6;
+}
+
+th {
+  text-align: left;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+td {
+  padding: 12px;
+  font-size: 13px;
+  color: #111827;
+  border-top: 1px solid #e5e7eb;
+}
+
+td:nth-child(1),
+td:nth-child(4) {
+  font-family: "Ubuntu Mono", monospace;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* action buttons */
+td button {
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: #2563eb;
+  margin-right: 8px;
+}
+
+td button:hover {
+  text-decoration: underline;
+}
+
+.cst-no-action {
+  font-family: "Ubuntu Mono", monospace;
+  color: gray;
+}

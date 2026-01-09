@@ -1,0 +1,47 @@
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 280px;
+  max-width: 420px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  z-index: 2000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.alert-message {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+/* TYPES */
+.alert-error {
+  background: #dc2626;
+}
+
+.alert-success {
+  background: #16a34a;
+}
+
+.alert-warning {
+  background: #d97706;
+}
+
+.alert-info {
+  background: #2563eb;
+}
