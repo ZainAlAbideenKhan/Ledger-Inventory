@@ -8,7 +8,7 @@ const initSchema = require("./db/initSchema");
 
 const app = express();
 
-app.get('/health', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
@@ -16,13 +16,12 @@ app.get('/health', (req, res) => {
 app.use(cors());
 app.use(express.json());
 
-app.use('/auth', authRoutes);
-app.use('/inventory', inventoryRoutes);
-app.use('/ledgers', ledgerRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/inventory', inventoryRoutes);
+app.use('/api/ledgers', ledgerRoutes);
 
 (async () => {
   await initSchema();
 })();
-
 
 module.exports = app;
