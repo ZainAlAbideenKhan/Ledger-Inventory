@@ -1,21 +1,14 @@
 const mysql = require('mysql2/promise');
 
-let pool;
+const pool = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  waitForConnections: true,
+  connectionLimit: 2,   // VERY IMPORTANT FOR FREEDB
+  queueLimit: 0,
+  ssl: false
+});
 
-function getPool() {
-  if (!pool) {
-    pool = mysql.createPool({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      waitForConnections: true,
-      connectionLimit: 2,
-      queueLimit: 0,
-      ssl: false
-    });
-  }
-  return pool;
-}
-
-module.exports = getPool;
+module.exports = pool;
