@@ -1,10 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 
-const authRoutes = require("./api/routes/auth.routes");
-const inventoryRoutes = require("./api/routes/ledger.routes");
-const ledgerRoutes = require("./api/routes/inventory.routes");
-const initSchema = require("./api/db/initSchema");
+const authRoutes = require("./routes/auth.routes");
+const inventoryRoutes = require("./routes/ledger.routes");
+const ledgerRoutes = require("./routes/inventory.routes");
+const initSchema = require("./db/initSchema");
 
 (async () => {
   await initSchema();
