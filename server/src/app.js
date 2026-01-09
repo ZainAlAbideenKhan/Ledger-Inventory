@@ -1,7 +1,11 @@
 const express = require("express");
 const cors = require("cors");
-
 const app = express();
+const initSchema = require("./db/initSchema");
+
+(async () => {
+  await initSchema();
+})();
 
 app.use(cors());
 app.use(express.json());
