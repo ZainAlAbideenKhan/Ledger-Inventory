@@ -6,9 +6,6 @@ const inventoryRoutes = require("./routes/ledger.routes");
 const ledgerRoutes = require("./routes/inventory.routes");
 const initSchema = require("./db/initSchema");
 
-(async () => {
-  await initSchema();
-})();
 
 const app = express();
 
@@ -18,5 +15,14 @@ app.use(express.json());
 app.use('/auth', authRoutes);
 app.use('/inventory', inventoryRoutes);
 app.use('/ledgers', ledgerRoutes);
+
+(async () => {
+  await initSchema();
+})();
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
 
 module.exports = app;
