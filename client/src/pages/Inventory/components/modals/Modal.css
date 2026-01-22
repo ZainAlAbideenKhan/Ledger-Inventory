@@ -71,7 +71,8 @@
   color: white;
 }
 
-.modal-actions button.danger {
+.modal-actions button.danger,
+button.danger {
   background: #dc2626;
   color: white;
 }

@@ -145,6 +145,35 @@ async function initSchema() {
     }
 
     /* =========================
+       FAULTY_ITEMS
+    ========================= */
+    if (!(await tableExists(conn, 'faulty_items'))) {
+      await conn.query(`
+        CREATE TABLE faulty_items (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          ledger_id INT NOT NULL,
+          store_item_id INT NOT NULL,
+          item_code VARCHAR(20) NOT NULL,
+        
+          quantity_before DECIMAL(10,2) NOT NULL,
+          quantity_faulty DECIMAL(10,2) NOT NULL,
+          unit VARCHAR(50) NOT NULL,
+        
+          reported_by INT NOT NULL,
+          reason VARCHAR(255),
+        
+          is_deleted TINYINT(1) DEFAULT 0,
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        
+          FOREIGN KEY (ledger_id) REFERENCES ledgers(id),
+          FOREIGN KEY (store_item_id) REFERENCES store_items(id),
+          FOREIGN KEY (reported_by) REFERENCES users(id)
+        );
+      `);
+      console.log('✅ faulty_items table created');
+    }
+
+    /* =========================
        FOREIGN KEYS
     ========================= */
 

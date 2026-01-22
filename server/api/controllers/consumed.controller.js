@@ -6,6 +6,7 @@ exports.getConsumed = async (req, res) => {
   const [rows] = await pool.query(
     `SELECT
       c.id,
+      s.name,
       c.ledger_id,
       c.store_item_id,
       c.item_code,
@@ -18,6 +19,7 @@ exports.getConsumed = async (req, res) => {
       u.username AS responsible_username
     FROM consumed_items c 
     JOIN users u on u.id = c.responsible
+    JOIN store_items s on s.id = c.store_item_id
     WHERE c.ledger_id = ? AND c.is_deleted = 0`,
     [ledgerId]
   );

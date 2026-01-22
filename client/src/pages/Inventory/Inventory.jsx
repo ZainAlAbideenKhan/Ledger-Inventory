@@ -5,7 +5,8 @@ import NavBar from "./components/NavBar";
 import MembersSidebar from "./components/MembersSidebar";
 import StoreTable from "./components/StoreTable";
 import ConsumedTable from "./components/ConsumedTable";
-import { useAlert } from '../../context/AlertContext';
+import FaultyTable from "./components/FaultyTable";
+import { useAlert } from "../../context/AlertContext";
 import "./Inventory.css";
 
 export default function Inventory() {
@@ -22,7 +23,7 @@ export default function Inventory() {
         const res = await api.get(`/ledgers/${ledgerId}/me`);
         setLedger(res.data);
       } catch (err) {
-        showAlert(err.message, 'error');
+        showAlert(err.message, "error");
         navigate("/dashboard");
       } finally {
         setLoading(false);
@@ -40,7 +41,7 @@ export default function Inventory() {
 
   const role = ledger.role;
   const canManageMembers = role === "admin";
-  
+
   return (
     <div className="inventory-wrapper">
       <NavBar
@@ -50,15 +51,35 @@ export default function Inventory() {
       />
 
       <div className="inventory-body">
-        <MembersSidebar ledgerId={ledgerId} canManage={canManageMembers} username={ledger.username} />
+        <MembersSidebar
+          ledgerId={ledgerId}
+          canManage={canManageMembers}
+          username={ledger.username}
+        />
 
         <main className="inventory-main">
           {activeTab === "store" && (
-            <StoreTable ledgerId={ledgerId} role={role} username={ledger.username} />
+            <StoreTable
+              ledgerId={ledgerId}
+              role={role}
+              username={ledger.username}
+            />
           )}
 
           {activeTab === "consumed" && (
-            <ConsumedTable ledgerId={ledgerId} role={role} username={ledger.username} />
+            <ConsumedTable
+              ledgerId={ledgerId}
+              role={role}
+              username={ledger.username}
+            />
+          )}
+
+          {activeTab === "faulty" && (
+            <FaultyTable
+              ledgerId={ledgerId}
+              currentUser={ledger.username}
+              role={role}
+            />
           )}
         </main>
       </div>

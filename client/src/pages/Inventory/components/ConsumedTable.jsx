@@ -45,6 +45,7 @@ export default function ConsumedTable({ ledgerId, role, username }) {
           <thead>
             <tr>
               <th>Code</th>
+              <th>Name</th>
               <th>Before</th>
               <th>Consumed</th>
               <th>Unit</th>
@@ -57,6 +58,7 @@ export default function ConsumedTable({ ledgerId, role, username }) {
             {entries.map((e) => (
               <tr key={e.id}>
                 <td>{e.item_code}</td>
+                <td>{e.name}</td>
                 <td>{e.quantity_before}</td>
                 <td>{e.quantity_consumed}</td>
                 <td>{e.unit}</td>

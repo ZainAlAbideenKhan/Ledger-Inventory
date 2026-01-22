@@ -1,4 +1,4 @@
-import './NavBar.css';
+import "./NavBar.css";
 
 export default function NavBar({ ledgerName, activeTab, onTabChange }) {
   return (
@@ -10,23 +10,27 @@ export default function NavBar({ ledgerName, activeTab, onTabChange }) {
 
       <div className="nav-center">
         <button
-          className={activeTab === 'store' ? 'active' : ''}
-          onClick={() => onTabChange('store')}
+          className={activeTab === "store" ? "active" : ""}
+          onClick={() => onTabChange("store")}
         >
           Store
         </button>
         <button
-          className={activeTab === 'consumed' ? 'active' : ''}
-          onClick={() => onTabChange('consumed')}
+          className={activeTab === "consumed" ? "active" : ""}
+          onClick={() => onTabChange("consumed")}
         >
           Consumed
+        </button>
+        <button
+          className={activeTab === "faulty" ? "active" : ""}
+          onClick={() => onTabChange("faulty")}
+        >
+          Faulty
         </button>
       </div>
 
       <div className="nav-right">
-        <button
-          onClick={() => (window.location.href = '/dashboard')}
-        >
+        <button onClick={() => (window.location.href = "/dashboard")}>
           Dashboard
         </button>
       </div>

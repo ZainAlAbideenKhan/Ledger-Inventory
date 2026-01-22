@@ -5,6 +5,7 @@ const role = require('../middleware/ledgerRole.middleware');
 const members = require('../controllers/ledgerMembers.controller');
 const store = require('../controllers/store.controller');
 const consumed = require('../controllers/consumed.controller');
+const faulty = require('../controllers/faulty.controller');
 
 router.get( '/:ledgerId/members', auth, role(['admin', 'writer', 'reader']), members.getMembers );
 router.post('/:ledgerId/members', auth, role(['admin']), members.addMember);
@@ -20,5 +21,9 @@ router.delete('/:ledgerId/store/:itemId', auth, role(['admin']), store.deleteIte
 router.get('/:ledgerId/consumed', auth, role(['admin', 'writer', 'reader']), consumed.getConsumed);
 router.post('/:ledgerId/consumed', auth, role(['admin', 'writer']), consumed.consumeItem);
 router.delete('/:ledgerId/consumed/:consumedId', auth, role(['admin']), consumed.deleteConsumed);
+
+router.get( '/:ledgerId/faulty', auth, role(['admin', 'writer', 'reader']), faulty.getFaulty );
+router.post( '/:ledgerId/faulty', auth, role(['admin', 'writer']), faulty.addFaulty );
+router.delete( '/:ledgerId/faulty/:faultyId', auth, role(['admin', 'writer']), faulty.removeFaulty );
 
 module.exports = router;
