@@ -38,7 +38,7 @@ export default function Dashboard() {
 
   const handleLogout = () => {
     localStorage.clear();
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
   return (
